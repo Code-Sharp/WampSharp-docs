@@ -1,6 +1,8 @@
+## Publisher role
+
 ### WampSubject
 
-As demonstrated in the [[Getting Started with Publisher]] page, WampSubject allows you to publish to a topic of a WAMP realm, with the type of the sent events.
+As demonstrated in the [Getting Started with Publisher](Getting-Started-with-Publisher.md) page, WampSubject allows you to publish to a topic of a WAMP realm, with the type of the sent events.
 
 If specifying a generic type, the ARGUMENTS parameter of the EVENT message will contain the single parameter OnNext receives.
 

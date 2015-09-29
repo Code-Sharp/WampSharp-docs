@@ -1,3 +1,5 @@
+## Caller role
+
 ### Callee proxy
 
 As demonstrated in the [Getting Started with Caller](Getting-Started-with-Caller.md) page, callee proxy allows you to call callee methods of a WAMP realm, by declaring an interface with methods decorated with a [WampProcedure] attribute.

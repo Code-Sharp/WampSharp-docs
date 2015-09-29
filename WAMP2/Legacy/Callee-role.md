@@ -1,4 +1,6 @@
-### Reflection base callee
+## Callee role
+
+### Reflection based callee
 
 As demonstrated in the [Getting Started with Callee](Getting-Started-with-Callee.md) page, reflection base callee allows you to register classes instances with method decorated with a [WampProcedure] attribute as remote procedure operation to a WAMP realm.
 

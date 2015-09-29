@@ -1,3 +1,5 @@
+## Subscriber role
+
 ### WampSubject
 
 As demonstrated in the [Getting Started with Subscriber](Getting-Started-with-Subscriber.md) page, WampSubject allows you to subscribe to a topic of a WAMP realm, given the type of the received events.

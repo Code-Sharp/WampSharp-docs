@@ -1,3 +1,5 @@
+## WampHost
+
 A WampHost is an object that hosts a WampSharp router.
 
 In order to use WampHost, instantiate a new instance of WampHost class.
@@ -50,10 +52,10 @@ host.Open();
 ```
 
 After that, you consume the roles you are interested in as described in the getting started tutorials:
-* [[Getting Started with Callee]]
-* [[Getting Started with Caller]]
-* [[Getting Started with Subscriber]]
-* [[Getting Started with Publisher]]
+* [Getting started with Callee](../Roles/Callee/Getting-Started-with-Callee.md)
+* [Getting started with Caller](../Roles/Caller/Getting-Started-with-Caller.md)
+* [Getting started with Subscriber](../Roles/Subscriber/Getting-Started-with-Subscriber.md)
+* [Getting started with Publisher](../Roles/Publisher/Getting-Started-with-Publisher.md)
 
 ### DefaultWampHost
 

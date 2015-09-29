@@ -1,7 +1,8 @@
-###WAMP-CRA client-side authentication
+## WAMP-CRA client-side authentication
 
 [WAMP-CRA](https://github.com/tavendo/WAMP/blob/master/spec/advanced/challenge-response-authentication.md/) client side authentication is  supported. In order to use it, instantiate a new instance of WampCraAuthenticator and pass it to the channel factory.
-Example:
+
+### Example
 
 ```csharp
 public async Task Run()

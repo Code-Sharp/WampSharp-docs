@@ -1,10 +1,10 @@
-###WAMP-CRA router-side authentication
+## WAMP-CRA router-side authentication
 
 [WAMP-CRA](https://github.com/tavendo/WAMP/blob/master/spec/advanced/challenge-response-authentication.md/) router side authentication is supported. It is available as an abstract class named WampCraSessionAuthenticator which inherits from the [[WampSessionAuthenticator class|Router-side authentication]]. The class has two abstract properties needed to be implemented: AuthenticationChallenge and Secret - the AuthenticationChallenge is the challenge to be sent upon CHALLENGE message, the Secret is the secret used to compute the signature
 
 It is also possible to add additional data (sent upon CHALLENGE message in extra parameter), such as salt, iterations and keylen by setting the CraChallengeDetails property.
 
-####Sample
+### Sample
 >Note: this sample is based on [this crossbar.io sample](https://github.com/crossbario/crossbarexamples/tree/master/authenticate/wampcra).
 
 ```csharp
@@ -153,7 +153,7 @@ internal class Program
 }
 ```
 
-#### WampCraUserDbAuthenticationFactory
+### WampCraUserDbAuthenticationFactory
 
 WampCraUserDbAuthenticationFactory is a predefined implementation of IWampSessionAuthenticatorFactory which is role based and reminds [Crossbar](http://crossbar.io)'s authentication.
 
@@ -162,7 +162,7 @@ In order to instantiate WampCraUserDbAuthenticationFactory, two mechanisms need 
  * IWampAuthenticationProvider - an interface that provides roles - these are objects that have a role name and a IWampAuthorizer.
  * IWampCraUserDb - an interface that retrieves a WampCraUser by its authenticationId - this is an object that contains WampCra user details (role, secret and other WAMP CRA parameters).
 
-#####Example
+#### Example
 >Note: this sample is based on [this crossbar.io sample](https://github.com/crossbario/crossbarexamples/tree/master/authenticate/wampcra).
 
 ```csharp
@@ -283,11 +283,11 @@ internal class Program
 }
 ```
 
-#### WampCraStaticUserDb and WampStaticAuthenticationProvider
+### WampCraStaticUserDb and WampStaticAuthenticationProvider
 
 There exists predefined implementations for  IWampCraUserDb, IWampAuthenticationProvider and IWampAuthorizer named WampCraStaticUserDb, WampStaticAuthenticationProvider and WampStaticAuthorizer that use predefined static data.
 
-##### Example
+#### Example
 
 
 >Note: this sample is based on [this crossbar.io sample](https://github.com/crossbario/crossbarexamples/tree/master/authenticate/wampcra).

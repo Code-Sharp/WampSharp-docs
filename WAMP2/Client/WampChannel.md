@@ -1,3 +1,5 @@
+## WampChannel
+
 A WampChannel is an object that represents a WAMP client session to a remote router.
 
 In order to obtain a WampChannel, instantiate an instance of the WampChannelFactory class, and call CreateChannel with the desired realm to connect to, the desired WampConnection and the desired binding.

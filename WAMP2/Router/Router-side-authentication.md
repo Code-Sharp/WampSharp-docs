@@ -1,10 +1,10 @@
-### Router-side authentication
+## Router-side authentication
 
  This page describes router-side authentication.
 
 In order to use router-side authentication, you'll need to create an instance of a (Default)WampAuthenticationHost and initialize it with a IWampSessionAuthenticatorFactory - that is an interface which will create a IWampSessionAuthenticator - a mechanism which is responsible of the authentication process of an individual client.
 
-#### IWampSessionAuthenticator
+### IWampSessionAuthenticator
 
 IWampSessionAuthenticator is an interface which represents a mechanism which is responsible of the authentication process of an individual client. Whenever a client requests to join the router (i.e. sends a HELLO message), an IWampSessionAuthenticator is created by the IWampSessionAuthenticatorFactory passed to the WampHost.
 
@@ -14,13 +14,13 @@ In any point of this process, a WampAuthenticationException can be thrown. If su
 
 Once the client is authenticated, a WELCOME message will be sent to the client with details and authid, authmethod parameters as specified in WelcomeDetails, AuthenticationId and AuthenticationMethod properties. After that, the Authorizer property of the IWampSessionAuthenticator's instance will be used determine if the client is allowed to perform certain operations. See IWampAuthorizer section for more info.
 
-#### WampSessionAuthenticator
+### WampSessionAuthenticator
 
 In order to make it easier to implement the IWampSessionAuthenticator interface, the abstract class WampSessionAuthenticator is provided. In this class, the only members which are needed to be implemented are Authenticate, AuthenticationId and AuthenticationMethod. Other properties are implemented as auto-properties, which you can set their values. All members are virtual, so you can also override them.
 
 In addition, a WampSessionAuthenticator&lt;TExtra&gt; class is provided, which is the same as WampSessionAuthenticator, but deserializes the given extra dictionary passed in AUTHENTICATE message to the given TExtra type.
 
-#### IWampAuthorizer
+### IWampAuthorizer
 
 IWampAuthorizer is an interface which checks whether an individual client is allowed to perform certain WAMP operations.
 
@@ -37,7 +37,7 @@ public interface IWampAuthorizer
 
 Each method can return a false value in order to prevent access of the client to do certain actions. In addition, a WampException can be thrown by any method, which will result in sending an ERROR message to the client with the exception details (except in Publish case, where this will happen only if the client requested acknowledge).
 
-#### Ticket-based authentication example
+### Ticket-based authentication example
 
 This is an example implementation of a very simplified version of [Ticket-based authentication](https://github.com/tavendo/WAMP/blob/master/spec/advanced/ticket-authentication.md). It shows off a bit C# 6.0 features too.
 

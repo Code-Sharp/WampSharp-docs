@@ -1,3 +1,5 @@
+## WampChannelReconnector
+
 The WampChannelReconnector class helps handling re-connection of WampChannel.
 
 Usage sample:

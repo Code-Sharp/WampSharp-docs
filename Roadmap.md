@@ -1,4 +1,6 @@
-Some proposal 
+## Roadmap
+
+This is some proposal for WampSharp's future.
 
 ### Short term roadmap
 * Support for .NET Core/ASP.NET 5

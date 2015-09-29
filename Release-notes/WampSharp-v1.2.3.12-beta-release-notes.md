@@ -1,3 +1,5 @@
+## WampSharp v1.2.3.12-beta release notes
+
 **Contents**
 
 1. [New features](#new-features)
@@ -14,9 +16,9 @@
 
 ####Router side authentication
 
-From this version, [[router-side authentication|Router side authentication]] is supported. In particular [[WAMP-CRA is supported|WAMP CRA router side authentication]].
+From this version, [router-side authentication](../WAMP2/Router/Router-side-authentication.md) is supported. Also [WAMP-CRA is supported](../WAMP2/Router/WAMP-CRA-router-side-authentication.md).
 
-Also, [[Cookie based authenticators are supported|Cookie based router side authentication]].
+Also, [Cookie based authenticators are supported](../WAMP2/Router/Cookie-based-router-side-authentication.md).
 
 Currently authentication details (authid, authmethod and authrole) are forwarded to callees if the caller is disclosed. These are accessible via WampInvocationContext. This might change according to the [WAMP spec decision](https://github.com/wamp-proto/wamp-proto/issues/57).
 

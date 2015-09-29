@@ -1,3 +1,5 @@
+## WampSharp v1.2.1.6-beta release notes
+
 **Contents**
 
 1. [Api changes](#api-changes)
@@ -92,10 +94,10 @@ host.Open();
 
 #### Progressive calls
 
-From this version, progressive calls are supported. 
+From this version, progressive calls are supported.
 In order to use progressive calls as a Caller, declare in your callee service a [WampProcedure] method having a [WampProgressiveCall] attribute and a IProgress&lt;T&gt; as the last parameter.
 > Note that the method return type should be Task&lt;T&gt; where this is the same T as in the IProgress&lt;T&gt; of the last parameter.
- 
+
 Example:
 
 ```csharp
@@ -116,10 +118,10 @@ public async Task Run()
     IWampChannel channel = factory.CreateJsonChannel("ws://localhost:8080/ws", "realm1");
 
     await channel.Open();
-    
+
     ILongOpService proxy = channel.RealmProxy.Services.GetCalleeProxy<ILongOpService>();
 
-    Progress<int> progress = 
+    Progress<int> progress =
         new Progress<int>(i => Console.WriteLine("Got progress " + i));
 
     int result = await proxy.LongOp(10, progress);
@@ -147,7 +149,7 @@ public class LongOpService : ILongOpService
 ```
 
 > Note: you can put the attributes on the method itself instead of implementing an interface, i.e:
-> 
+>
 >```csharp
 > public class LongOpService
 >{
@@ -172,7 +174,7 @@ public async Task Run()
 
     ILongOpService service = new LongOpService();
 
-    IAsyncDisposable disposable = 
+    IAsyncDisposable disposable =
         await channel.RealmProxy.Services.RegisterCallee(service);
 
     Console.WriteLine("Registered LongOpService");
@@ -194,7 +196,7 @@ public async Task Run()
 {
     DefaultWampChannelFactory factory = new DefaultWampChannelFactory();
 
-    IWampChannel channel = 
+    IWampChannel channel =
         factory.CreateJsonChannel("ws://localhost:8080/ws", "realm1");
 
     await channel.Open();
@@ -250,7 +252,7 @@ public class SquareService
     [WampProcedure("com.myapp.square")]
     public int Square(int n)
     {
-        InvocationDetails details = 
+        InvocationDetails details =
             WampInvocationContext.Current.InvocationDetails;
 
         Console.WriteLine("Someone is calling me: " + details.Caller);
@@ -266,7 +268,7 @@ public class SquareService
 
 #### WampInvocationContext
 
-WampInvocationContext allows you to get the invocation details provided with the current invocation. It currently contains the caller identification (if present) and whether the caller requested a progressive call. 
+WampInvocationContext allows you to get the invocation details provided with the current invocation. It currently contains the caller identification (if present) and whether the caller requested a progressive call.
 Example:
 
 ```csharp
@@ -274,7 +276,7 @@ public class LongOpService : ILongOpService
 {
     public async Task<int> LongOp(int n, IProgress<int> progress)
     {
-        InvocationDetails details = 
+        InvocationDetails details =
             WampInvocationContext.Current.InvocationDetails;
 
         for (int i = 0; i < n; i++)
@@ -314,7 +316,7 @@ public delegate void MyPublicationDelegate(int number1, int number2, string c, M
 public interface IMyPublisher
 {
     [WampTopic("com.myapp.heartbeat")]
-    event Action Heartbeat; 
+    event Action Heartbeat;
 
     [WampTopic("com.myapp.topic2")]
     event MyPublicationDelegate MyEvent;
@@ -349,7 +351,7 @@ public class MyPublisher : IMyPublisher
     private void RaiseHeartbeat()
     {
         Action handler = Heartbeat;
-        
+
         if (handler != null)
         {
             handler();
@@ -359,7 +361,7 @@ public class MyPublisher : IMyPublisher
     private void RaiseMyEvent(int number1, int number2, string c, MyClass d)
     {
         MyPublicationDelegate handler = MyEvent;
-        
+
         if (handler != null)
         {
             handler(number1, number2, c, d);
@@ -383,7 +385,7 @@ public static async Task Run()
 
     await channel.Open();
 
-    IDisposable publisherDisposable = 
+    IDisposable publisherDisposable =
         channel.RealmProxy.Services.RegisterPublisher(new MyPublisher());
 
     // call publisherDisposable.Dispose(); to unsubscribe from the event.
@@ -449,7 +451,7 @@ public static async Task Run()
 
     await channel.Open();
 
-    Task<IAsyncDisposable> subscriptionTask = 
+    Task<IAsyncDisposable> subscriptionTask =
         channel.RealmProxy.Services.RegisterSubscriber(new MySubscriber());
 
     IAsyncDisposable asyncDisposable = await subscriptionTask;
@@ -494,7 +496,7 @@ public class MyCalleeProxyInterceptor : CalleeProxyInterceptor
 {
     private readonly int mCalleeIndex;
 
-    public MyCalleeProxyInterceptor(int calleeIndex) : 
+    public MyCalleeProxyInterceptor(int calleeIndex) :
         base(new CallOptions())
     {
         mCalleeIndex = calleeIndex;
@@ -533,7 +535,7 @@ public static async Task Run()
 
     int index = GetRuntimeIndex();
 
-    ISquareService proxy = 
+    ISquareService proxy =
         channel.RealmProxy.Services.GetCalleeProxy<ISquareService>
         (new CachedCalleeProxyInterceptor(
             new MyCalleeProxyInterceptor(index)));
@@ -545,7 +547,7 @@ public static async Task Run()
 
 > Note: we wrap our interceptor with the CachedCalleeProxyInterceptor in order to cache the results of our interceptor, in order to avoid calculating them each call.
 
-Other interceptors work similarly. 
+Other interceptors work similarly.
 In addition, the interceptors allow modifying the options sent to each request.
 
 > Note: these interceptors are still "static", i.e: they don't allow returning a value that depends on the publication/call parameters.
@@ -575,10 +577,10 @@ public class TicketAuthenticator : IWampClientAuthenticator
         if (authmethod == "ticket")
         {
             Console.WriteLine("authenticating via '" + authmethod + "'");
-            
-            AuthenticationResponse result = 
+
+            AuthenticationResponse result =
                 new AuthenticationResponse {Signature = mTickets[User]};
-            
+
             return result;
         }
         else
@@ -613,19 +615,19 @@ public async Task Run()
     DefaultWampChannelFactory channelFactory = new DefaultWampChannelFactory();
 
     IWampClientAuthenticator authenticator = new TicketAuthenticator();
-    
+
     IWampChannel channel =
         channelFactory.CreateJsonChannel("ws://127.0.0.1:8080/ws",
             "realm1",
             authenticator);
-    
+
     IWampRealmProxy realmProxy = channel.RealmProxy;
 
     await channel.Open();
 
     // Call a rpc for example
     ITimeService proxy = realmProxy.Services.GetCalleeProxy<ITimeService>();
-    
+
     try
     {
         string now = await proxy.Now();

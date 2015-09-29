@@ -1,6 +1,4 @@
-_**Note**: WampSharp WAMP v2 support is still in development, not stable yet_
-
-_**Note**: You need [NuGet](http://www.nuget.org) for this tutorial_
+## Getting started with WAMPv2
 
 Create a new Console Application in Visual Studio.
 
@@ -73,7 +71,7 @@ A WampChannel represents a session to a WAMPv2 router. It contains a property na
 
 See the following tutorials for getting started with a WAMPv2 role:
 
-* [Getting Started with Callee](Roles\Callee\Getting-Started-with-Callee.md)
-* [Getting Started with Caller](Roles\Caller\Getting-Started-with-Caller.md)
-* [Getting Started with Subscriber](Roles\Subscriber\Getting-Started-with-Subscriber.md)
-* [Getting Started with Publisher](Roles\Publisher\Getting-Started-with-Publisher.md)
+* [Getting started with Callee](Roles/Callee/Getting-Started-with-Callee.md)
+* [Getting started with Caller](Roles/Caller/Getting-Started-with-Caller.md)
+* [Getting started with Subscriber](Roles/Subscriber/Getting-Started-with-Subscriber.md)
+* [Getting started with Publisher](Roles/Publisher/Getting-Started-with-Publisher.md)

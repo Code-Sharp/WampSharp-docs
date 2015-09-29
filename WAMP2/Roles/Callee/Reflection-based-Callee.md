@@ -98,7 +98,9 @@ public class SlowSquareService
 
 #### out/ref parameters
 
- For synchronous methods, out/ref parameters are supported. Note: this is not supported for asynchronous methods. Example:
+ For synchronous methods, out/ref parameters are supported. 
+ >Note: this is not supported for asynchronous methods.
+ Example:
 ```csharp
 public class ComplexResultService
 {

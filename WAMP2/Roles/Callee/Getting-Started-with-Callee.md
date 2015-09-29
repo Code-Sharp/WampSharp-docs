@@ -14,8 +14,7 @@ WAMPv2 defines a Callee role, that is a role that can register a remote procedur
 The Reflection based callee is the easiest way to register callee methods to a WAMP router.
 
 In order to use it, create a class having methods decorated with [WampProcedure] attribute.
-Then create an instance of the class and register it using the RegisterCalee method of the Services property  
-of the IWampRealmProxy/IWampRealm instance.
+Then create an instance of the class and register it using the RegisterCalee method of the Services property of the IWampRealmProxy/IWampRealm instance.
 
 #### Client sample
 

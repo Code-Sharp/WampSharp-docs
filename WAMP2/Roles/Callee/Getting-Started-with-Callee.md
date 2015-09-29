@@ -7,7 +7,7 @@ See [Getting started with WAMPv2](../../Getting-started-with-WAMPv2.md) and crea
 
 ### About Callee role
 
-WAMPv2 defines a Callee role, that is a role that can register a remote procedure call to the router (using the REGISTER/UNREGISTER messages). The callee's procedure can be invoked by the router (using the INVOCATION message). The callee can response with a result or an error to the router  (using the YIELD/ERROR message).
+WAMPv2 defines a Callee role, that is a role that can register a remote procedure call to the router (using the REGISTER/UNREGISTER messages). The callee's procedure can be invoked by the router (using the INVOCATION message). The callee can respond with a result or an error to the router  (using the YIELD/ERROR message).
 
 WampSharp supports two methods for consuming the callee role.
 

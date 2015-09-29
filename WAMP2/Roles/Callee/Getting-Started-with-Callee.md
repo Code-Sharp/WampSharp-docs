@@ -24,6 +24,7 @@ of the IWampRealmProxy/IWampRealm instance.
 ```csharp
 using System;
 using System.Threading.Tasks;
+using SystemEx;
 using WampSharp.V2;
 using WampSharp.V2.Client;
 using WampSharp.V2.Rpc;
@@ -92,6 +93,8 @@ namespace MyNamespace
 
 ```csharp
 using System;
+using System.Threading.Tasks;
+using SystemEx;
 using WampSharp.V2;
 using WampSharp.V2.Realm;
 using WampSharp.V2.Rpc;

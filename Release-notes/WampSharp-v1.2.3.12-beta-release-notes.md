@@ -24,7 +24,7 @@ Currently authentication details (authid, authmethod and authrole) are forwarded
 
 This version introduces new api to obtain a IWampChannel. The api is fluent and allows customization.
 
-In order to use it, you need to add an using directive. Note that the available api depends on which WampSharp packages you installed. (For instance, if you haven't installed WampSharp.NewtonsoftMsgpack, then msgpack extensions method won't be present)
+In order to use it, you need to add an using directive. Note that the available api depends on which WampSharp packages you installed. (For instance, if you haven't installed WampSharp.NewtonsoftMsgpack, then msgpack extension methods won't be present)
 
 ```csharp
 using WampSharp.V2.Fluent;

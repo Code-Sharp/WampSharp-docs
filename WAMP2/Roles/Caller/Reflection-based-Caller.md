@@ -97,9 +97,14 @@ orders = await proxy.OrdersAsync("coffee", limit: 10);
 Console.WriteLine("Orders 2: {0}", string.Join(", ", orders));
 ```
 
-#### Out/ref parameters
+>Note:  The sample is based on [this](https://github.com/tavendo/AutobahnPython/tree/master/examples/twisted/wamp/rpc/arguments) AutobahnJS sample
 
-For synchronous methods, out/ref parameters are supported. Note: this is not supported for asynchronous methods. Example:
+#### out/ref parameters
+
+For synchronous methods, out/ref parameters are supported.
+> Note: this is not supported for asynchronous methods.
+
+Example:
 
 ```csharp
 public interface IComplexResultService
@@ -114,6 +119,7 @@ int ci;
 int c;
 proxy.AddComplex(2, 3, 4, 5, out c, out  ci);
 ```
+>Note:  The sample is based on [this](https://github.com/tavendo/AutobahnPython/tree/master/examples/twisted/wamp/rpc/complex) AutobahnJS sample
 
 #### Multi-valued results
 
@@ -131,9 +137,25 @@ Call example:
 ```csharp
 string[] splitted = proxy.SplitName("Homer Simpson");
 ```
+>Note:  The sample is based on [this](https://github.com/tavendo/AutobahnPython/tree/master/examples/twisted/wamp/rpc/complex) AutobahnJS sample
 
 #### Exception support
 You can catch a WampException in order to treat a ERROR message.
+
+Example:
+
+```csharp
+try
+{
+    await proxy.CheckNameAsync("Moses Montefiore").ConfigureAwait(false);
+}
+catch (WampException ex)
+{
+    string errorUri = ex.ErrorUri; // "com.myapp.error.invalid_length"
+    IDictionary<string, object> arguments = ex.ArgumentsKeywords; // {"min": 3, "max": 10}
+}
+```
+>Note:  The sample is based on [this](https://github.com/tavendo/AutobahnPython/tree/master/examples/twisted/wamp/rpc/errors) AutobahnJS sample
 
 #### Progressive calls
 

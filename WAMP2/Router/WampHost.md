@@ -3,7 +3,7 @@
 A WampHost is an object that hosts a WampSharp router.
 
 In order to use WampHost, instantiate a new instance of WampHost class.
-Then register the host with the transport and bindings your are interested in: 
+Then register the host with the transport and bindings you are interested in:
 
 For example: Initialization of a WampHost with FleckWebSocketTransport and Json and Msgpack binding support:
 ```csharp
@@ -24,7 +24,7 @@ const string serverAddress = "http://127.0.0.1:8080/wampsharp";
 
 WampHost host = new WampHost();
 
-host.RegisterTransport(new SignalRTransport(serverAddress),
+host.RegisterTransport(new SignalRTransport(serverAddress, ""),
                        new JTokenJsonBinding());
 
 host.Open();
@@ -38,14 +38,14 @@ const string signalRAddress = "http://127.0.0.1:9090/signalR";
 
 WampHost host = new WampHost();
 
-JTokenBinding jsonBinding = new JTokenJsonBinding();
+JTokenJsonBinding jsonBinding = new JTokenJsonBinding();
 JTokenMsgpackBinding msgpackBinding = new JTokenMsgpackBinding();
 
 host.RegisterTransport(new FleckWebSocketTransport(fleckAddress),
                        jsonBinding,
                        msgpackBinding);
 
-host.RegisterTransport(new SignalRTransport(signalRAddress),
+host.RegisterTransport(new SignalRTransport(signalRAddress, ""),
                        jsonBinding);
 
 host.Open();
@@ -63,7 +63,7 @@ Since the most common usage of WampSharp is with Fleck and Json/Msgpack support,
 
 In order to use it, provide only the server address in the class's constructor.
 
-Example:
+#### Example
 
 ```csharp
 const string serverAddress = "http://127.0.0.1:8080/ws";

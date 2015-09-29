@@ -128,10 +128,46 @@ public class MultivaluedResultService
     }
 }
 ```
+>Note:  The sample is based on [this](https://github.com/tavendo/AutobahnPython/tree/master/examples/twisted/wamp/rpc/complex) AutobahnJS sample
 
 #### Exception support
 
 throw a WampException/WampRpcRuntimeException in order to send a ERROR message.
+
+Example:
+
+```csharp
+[WampProcedure("com.myapp.checkname")]
+public void CheckName(string name)
+{
+    if (new[] {"foo", "bar"}.Contains(name))
+    {
+        throw new WampException("com.myapp.error.reserved");
+    }
+
+    if (name.ToLower() != name.ToUpper())
+    {
+        throw new WampException("com.myapp.error.mixed_case", name.ToLower(), name.ToUpper());
+    }
+
+    if ((name.Length < 3) || (name.Length > 10))
+    {
+        object[] arguments = new object[] {};
+
+        IDictionary<string, object> argumentKeywords =
+            new Dictionary<string, object>()
+                {
+                    {"min", 3},
+                    {"max", 10}
+                };
+
+        throw new WampException("com.myapp.error.invalid_length", arguments, argumentKeywords);
+    }
+}
+```
+
+>Note:  The sample is based on [this](https://github.com/tavendo/AutobahnPython/tree/master/examples/twisted/wamp/rpc/errors) AutobahnJS sample
+
 
 #### Progressive call results
 

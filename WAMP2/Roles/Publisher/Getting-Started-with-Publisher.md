@@ -28,7 +28,6 @@ using System.Reactive.Subjects;
 using System.Threading.Tasks;
 using WampSharp.V2;
 using WampSharp.V2.Client;
-using WampSharp.V2.Realm;
 
 namespace MyNamespace
 {

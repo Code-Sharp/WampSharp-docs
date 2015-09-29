@@ -89,9 +89,46 @@ namespace MyNamespace
 
 ### Manual proxy samples
 
-This sample demonstrates how a manual implementation of [[Reflection-based callee]].
+This sample demonstrates a manual implementation of [Reflection-based caller](Reflection-based-Caller.md).
 
 ```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using WampSharp.Core.Serialization;
+using WampSharp.V2;
+using WampSharp.V2.Client;
+using WampSharp.V2.Core.Contracts;
+using WampSharp.V2.Rpc;
+
+public interface IArgumentsService
+{
+    [WampProcedure("com.arguments.ping")]
+    void Ping();
+
+    [WampProcedure("com.arguments.add2")]
+    int Add2(int a, int b);
+
+    [WampProcedure("com.arguments.stars")]
+    string Stars(string nick = "somebody", int stars = 0);
+
+    [WampProcedure("com.arguments.orders")]
+    string[] Orders(string product, int limit = 5);
+
+    [WampProcedure("com.arguments.ping")]
+    Task PingAsync();
+
+    [WampProcedure("com.arguments.add2")]
+    Task<int> Add2Async(int a, int b);
+
+    [WampProcedure("com.arguments.stars")]
+    Task<string> StarsAsync(string nick = "somebody", int stars = 0);
+
+    [WampProcedure("com.arguments.orders")]
+    Task<string[]> OrdersAsync(string product, int limit = 5);
+}
+
 public class ArgumentsServiceProxy : IArgumentsService
 {
     private readonly IWampRpcOperationCatalogProxy mCatalogProxy;
@@ -112,7 +149,7 @@ public class ArgumentsServiceProxy : IArgumentsService
     public Task<int> Add2Async(int a, int b)
     {
         AddCallback callback = new AddCallback();
-        mCatalogProxy.Invoke(callback, mDummy, "com.arguments.add2", new object[] {a, b});
+        mCatalogProxy.Invoke(callback, mDummy, "com.arguments.add2", new object[] { a, b });
         return callback.Task;
     }
 
@@ -127,7 +164,7 @@ public class ArgumentsServiceProxy : IArgumentsService
     public Task<string[]> OrdersAsync(string product, int limit = 5)
     {
         OrdersCallback callback = new OrdersCallback();
-        mCatalogProxy.Invoke(callback, mDummy, "com.arguments.orders", new object[] {product, limit});
+        mCatalogProxy.Invoke(callback, mDummy, "com.arguments.orders", new object[] { product, limit });
         return callback.Task;
     }
 
@@ -328,9 +365,15 @@ public class ArgumentsServiceProxy : IArgumentsService
         }
     }
 }
+```
 
+Usage:
+
+```csharp
 public async static Task Run()
 {
+    const string serverAddress = "ws://127.0.0.1:8080/ws";
+
     DefaultWampChannelFactory factory = new DefaultWampChannelFactory();
 
     IWampChannel channel =
@@ -341,6 +384,6 @@ public async static Task Run()
     ArgumentsServiceProxy proxy =
         new ArgumentsServiceProxy(channel.RealmProxy.RpcCatalog);
 
-    int nine = await proxy.Add2Async(4, 5).ConfigureAwait(false);  
+    int nine = await proxy.Add2Async(4, 5).ConfigureAwait(false);
 }
 ```

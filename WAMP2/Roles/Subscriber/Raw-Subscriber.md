@@ -8,12 +8,12 @@ Like other roles, subscriber also has a raw version, which allows you treat EVEN
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using SystemEx;
 using WampSharp.Core.Serialization;
 using WampSharp.V2;
 using WampSharp.V2.Client;
 using WampSharp.V2.Core.Contracts;
 using WampSharp.V2.PubSub;
-using WampSharp.V2.Realm;
 
 namespace MyNamespace
 {

@@ -1,6 +1,6 @@
 ## Getting started with Callee
 
-#### Before you start
+### Before you start
 
 See [Getting started with WAMPv2](../../Getting-started-with-WAMPv2.md) and create a WampChannel/WampHost your calleee will be registered to.
 
@@ -9,9 +9,7 @@ See [Getting started with WAMPv2](../../Getting-started-with-WAMPv2.md) and crea
 
 WAMPv2 defines a Callee role, that is a role that can register a remote procedure call to the router (using the REGISTER/UNREGISTER messages). The callee's procedure can be invoked by the router (using the INVOCATION message). The callee can respond with a result or an error to the router  (using the YIELD/ERROR message).
 
-WampSharp supports two methods for consuming the callee role.
-
-#### Reflection based callee
+### Reflection based callee
 
 The Reflection based callee is the easiest way to register callee methods to a WAMP router.
 
@@ -19,7 +17,7 @@ In order to use it, create a class having methods decorated with [WampProcedure]
 Then create an instance of the class and register it using the RegisterCalee method of the Services property  
 of the IWampRealmProxy/IWampRealm instance.
 
-##### Client sample
+#### Client sample
 
 ```csharp
 using System;
@@ -89,7 +87,7 @@ namespace MyNamespace
 }
 ```
 
-##### Router sample
+#### Router sample
 
 ```csharp
 using System;

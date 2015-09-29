@@ -1,6 +1,6 @@
 _**Note**: WampSharp is still in development, not stable yet_
 
-As you've seen in [[The getting started tutorial|Getting started with WAMPv1]], WampSharp allows you to host RPC services and consume them from a WAMP client.
+As you've seen in [The getting started tutorial](Getting-started-with-WAMPv1.md), WampSharp allows you to host RPC services and consume them from a WAMP client.
 
 ###Declaring RPC services
 

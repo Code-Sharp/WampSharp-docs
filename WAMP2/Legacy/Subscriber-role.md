@@ -1,6 +1,6 @@
 ### WampSubject
 
-As demonstrated in the [[Getting Started with Subscriber]] page, WampSubject allows you to subscribe to a topic of a WAMP realm, given the type of the received events.
+As demonstrated in the [Getting Started with Subscriber](Getting-Started-with-Subscriber.md) page, WampSubject allows you to subscribe to a topic of a WAMP realm, given the type of the received events.
 
 If specifying a generic type, only the first argument in the ARGUMENTS parameter of the EVENT message is deserialized.
 

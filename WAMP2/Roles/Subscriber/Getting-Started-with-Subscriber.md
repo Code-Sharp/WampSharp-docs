@@ -1,6 +1,8 @@
+## Getting started with Subscriber
+
 #### Before you start
 
-See [[Getting started with WAMPv2]] and create a WampChannel/WampHost your subscriber will use.
+See [Getting started with WAMPv2](..\..\Getting-started-with-WAMPv2.md) and create a WampChannel/WampHost your subscriber will use.
 
 ### About Subscriber role
 
@@ -112,6 +114,6 @@ namespace MyNamespace
 
 #### See also
 
-* [[Reflection-based Subscriber]]
-* [[Rx based Subscriber]]
-* [[Raw Subscriber]]
+* [Reflection-based Subscriber](Reflection-based-Subscriber.md)
+* [Rx based Subscriber](Rx-based-Subscriber.md)
+* [Raw Subscriber](Raw-Subscriber.md)

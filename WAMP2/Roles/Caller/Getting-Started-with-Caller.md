@@ -1,10 +1,12 @@
+## Getting started with Caller
+
 #### Before you start
 
-See [[Getting started with WAMPv2]] and create a WampChannel/WampHost your caller will use.
+See [Getting started with WAMPv2](..\..\Getting-started-with-WAMPv2.md) and create a WampChannel/WampHost your caller will use.
 
 ### About Caller role
 
-WAMPv2 defines a Caller role, that is a role that can call a remote procedure call registered by a [[Callee|Getting started with Callee]] (using the CALL messages). The caller can receive a response with a result or an error from the router  (using the RESULT/ERROR message).
+WAMPv2 defines a Caller role, that is a role that can call a remote procedure call registered by a [Callee](../Callee/Getting-started-with-Callee.md) (using the CALL messages). The caller can receive a response with a result or an error from the router  (using the RESULT/ERROR message).
 
 #### Callee proxy
 
@@ -160,5 +162,5 @@ namespace MyNamespace
 
 #### See also
 
-* [[Reflection-based Caller]]
-* [[Raw Caller]]
+* [Reflection-based Caller](Reflection-based-Caller.md)
+* [Raw Caller](Raw-Caller.md)

@@ -1,6 +1,8 @@
+## Getting started with Publisher
+
 #### Before you start
 
-See [[Getting started with WAMPv2]] and create a WampChannel/WampHost your publisher will use.
+See [Getting started with WAMPv2](..\..\Getting-started-with-WAMPv2.md) and create a WampChannel/WampHost your publisher will use.
 
 ### About Publisher role
 
@@ -141,6 +143,6 @@ namespace MyNamespace
 
 #### See also
 
-* [[Reflection-based Publisher]]
-* [[Rx based Publisher]]
-* [[Raw Publisher]]
+* [Reflection-based Publisher](Reflection-based-Publisher.md)
+* [Rx based Publisher](Rx-based-Publisher.md)
+* [Raw Publisher](Raw-Publisher.md)

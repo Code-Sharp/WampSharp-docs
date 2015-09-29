@@ -1,6 +1,4 @@
-_**Note**: WampSharp is still in development, not stable yet_
-
-_**Note**: You need [NuGet](http://www.nuget.org) for this tutorial_
+## Getting started with WAMPv1 client
 
 ###Before you begin
 Raise up a WampHost such as in the [[Getting started tutorial|Getting started with WAMPv1]].

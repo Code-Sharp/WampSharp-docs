@@ -1,4 +1,4 @@
-_**Note**: WampSharp is still in development, not stable yet_
+## Server PubSub hosting (WAMPv1)
 
 WampSharp contains a Pub/Sub mechanism.
 

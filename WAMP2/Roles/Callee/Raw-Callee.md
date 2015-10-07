@@ -121,9 +121,9 @@ public class Add2Operation : IWampRpcOperation
 
 ### SyncLocalRpcOperation and AsyncLocalRpcOperation.
 
-WampSharp defines some base-classes that make it easier to implement IWampRpcOperation, called SyncLocalRpcOperation and AsyncLocalRpcOperation.
+WampSharp defines some base-classes that make it easier to implement IWampRpcOperation, named SyncLocalRpcOperation and AsyncLocalRpcOperation.
 
-In these classes, we define the parameters we expect and let WampSharp deserialize them for us.
+In these classes, we define the parameters we expect to receive and let WampSharp deserialize them for us.
 
 #### Static parameters example
 

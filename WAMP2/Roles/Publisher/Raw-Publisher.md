@@ -1,9 +1,12 @@
-##Raw api
+## Raw Publisher
 
 If you want to get feedbacks for publications, you can use publisher raw api.
 In order to use it in client side, access the RealmProxy of your WampChannel and then access its TopicContainer property in order to obtain a WampTopicProxy to your topic. Then call Publish with PUBLISH parameters.
 
-Client side sample:
+In order to use it from router side:
+Obtain the realm by accessing the RealmContainer property of your WampHost, then access its TopicContainer property in order to access the topic by its uri, then call publish with desired parameters.
+
+### Client side sample
 
 ```csharp
 const string serverAddress = "ws://127.0.0.1:8080/ws";
@@ -51,8 +54,7 @@ timer.Subscribe(async x =>
     });
 ```
 
-In order to use it server side:
-Obtain the realm by accessing the RealmContainer property of your WampHost, then access its TopicContainer property in order to access the topic by its uri, then call publish with desired parameters.
+### Router side sample
 
 ```csharp
 const string serverAddress = "ws://127.0.0.1:8080/ws";

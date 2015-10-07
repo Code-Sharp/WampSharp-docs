@@ -1,8 +1,10 @@
+## Raw Subscriber
+
 Like other roles, subscriber also has a raw version, which allows you treat EVENT messages as you like. In order to use it, you need to implement the IWampRawTopicRouterSubscriber interface.
 
-## Usage:
+### Usage:
 
-### Client sample:
+#### Client sample:
 
 ```csharp
 using System;
@@ -67,7 +69,7 @@ namespace MyNamespace
 }
 ```
 
-### Router sample:
+#### Router sample:
 
 ```csharp
 using System;

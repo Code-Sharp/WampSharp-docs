@@ -76,7 +76,6 @@ private static void OnTopic2(IWampSerializedEvent serializedEvent)
     ComplexContract d =
         serializedEvent.ArgumentsKeywords["d"].Deserialize<ComplexContract>();
 
-
     var deserializedArguments =
         new
         {

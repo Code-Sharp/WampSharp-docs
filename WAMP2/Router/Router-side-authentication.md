@@ -198,3 +198,7 @@ public class Program
     }
 }
 ```
+
+### IWampSessionAuthenticatorFactory
+
+You might have been asking yourself what is the transportAuthenticator parameter in IWampSessionAuthenticatorFactory's GetSessionAuthenticator method. Well glad you've asked! This is an authenticator that can be provided by the transport of the session. Some transports have built-in metadata that can be used in order to authenticate a client. The common example is [cookies](Cookie-based-router-side-authentication.md).

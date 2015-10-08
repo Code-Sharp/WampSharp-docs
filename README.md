@@ -64,6 +64,7 @@ The following [Advanced profile features](https://github.com/wamp-proto/wamp-pro
 * Authentication
   * [Router side authentication](WAMP2/Router/Router-side-authentication.md)
   * [WAMP-CRA router side authentication](WAMP2/Router/WAMP-CRA-router-side-authentication.md)
+  * [Cookie based router side authentication](WAMP2/Router/Cookie-based-router-side-authentication.md)
 * Transports
   * WebSockets
     * Fleck

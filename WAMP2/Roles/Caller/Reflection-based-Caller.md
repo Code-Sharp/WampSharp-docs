@@ -157,9 +157,9 @@ catch (WampException ex)
 ```
 >Note:  The sample is based on [this](https://github.com/tavendo/AutobahnPython/tree/master/examples/twisted/wamp/rpc/errors) AutobahnJS sample
 
-#### Progressive calls
+#### Progressive call results
 
-In order to use progressive calls as a Caller, declare in your callee service a [WampProcedure] method having a [WampProgressiveResultProcedure] attribute and a IProgress&lt;T&gt; as the last parameter.
+In order to use progressive call results as a Caller, declare in your callee service a [WampProcedure] method having a [WampProgressiveResultProcedure] attribute and a IProgress&lt;T&gt; as the last parameter.
 > Note that the method return type should be Task&lt;T&gt; where this is the same T as in the IProgress&lt;T&gt; of the last parameter.
 
 Example:

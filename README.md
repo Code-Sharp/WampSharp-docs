@@ -4,7 +4,7 @@ This repository contains documentation for the [WampSharp project](http://github
 
 ### Introduction
 
-[WAMP (The Web Application Messaging Protocol)](http://wamp.ws) is a protocol, that defines messaging patterns of RPC and PubSub.
+[WAMP (The Web Application Messaging Protocol)](http://wamp.ws) is an open standard WebSocket subprotocol that provides two application messaging patterns in one unified protocol: Remote Procedure Calls + Publish & Subscribe.   
 
 [WampSharp](http://github.com/Code-Sharp/WampSharp) is a .NET open source implementation of WAMP which allows you to write RPC services and Pub/Sub based applications in a comfortable way.
 

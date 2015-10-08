@@ -117,7 +117,7 @@ IWampChannel channel =
 
 ####Meta-api descriptor service
 
-From this version WAMP meta-api is implemented (i.e. [session meta-api](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/session-meta-api.md], [subscription meta-api](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/subscription-meta-api.md) and [registartion meta-api](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/registration-meta-api.md)). It is possible both to consume WAMP meta-api from a WampSharp client, and to expose it from a WampSharp router.
+From this version WAMP meta-api is implemented (i.e. [session meta-api](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/session-meta-api.md), [subscription meta-api](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/subscription-meta-api.md) and [registartion meta-api](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/registration-meta-api.md)). It is possible both to consume WAMP meta-api from a WampSharp client, and to expose it from a WampSharp router.
 
 ##### Exposing meta-api
 

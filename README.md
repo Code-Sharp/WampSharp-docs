@@ -15,7 +15,7 @@ This repository contains documentation for the [WampSharp project](http://github
 ### WAMPv2 Documentation
 
 #### Tutorials
-* [Getting started with WAMPv2](WAMP2/Getting-Started-with-WAMPv2.md)
+* [Getting started with WAMPv2](WAMP2/Getting-started-with-WAMPv2.md)
 * [Getting started with Callee](WAMP2/Roles/Callee/Getting-Started-with-Callee.md)
 * [Getting started with Caller](WAMP2/Roles/Caller/Getting-Started-with-Caller.md)
 * [Getting started with Publisher](WAMP2/Roles/Publisher/Getting-Started-with-Publisher.md)

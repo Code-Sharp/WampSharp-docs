@@ -85,7 +85,7 @@ The following [Advanced profile features](https://github.com/wamp-proto/wamp-pro
 * [Get Started!](WAMP1/Getting-started-with-WAMPv1.md)
 * [Getting Started with WAMP client](WAMP1/Getting-started-with-WAMPv1-client.md)
 * [Server RPC Hosting](WAMP1/Server RPC hosting (WAMPv1).md)
-* [Server PubSub Hosting](WAMP1/Server PubSub Hosting (WAMPv1).md)
+* [Server PubSub Hosting](WAMP1/Server PubSub hosting (WAMPv1).md.md)
 * [Notes for WAMPv1 users](WAMP1/Notes-for-WAMPv1-users.md)
 
 ### Release Notes

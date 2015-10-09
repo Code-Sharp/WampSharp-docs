@@ -19,7 +19,7 @@ This repository contains documentation for the [WampSharp project](http://github
 * [Getting started with Callee](WAMP2/Roles/Callee/Getting-Started-with-Callee.md)
 * [Getting started with Caller](WAMP2/Roles/Caller/Getting-Started-with-Caller.md)
 * [Getting started with Publisher](WAMP2/Roles/Publisher/Getting-Started-with-Publisher.md)
-* [Getting started with Subscriber](WAMP2/Roles/Publisher/Getting-Started-with-Subscriber.md)
+* [Getting started with Subscriber](WAMP2/Roles/Subscriber/Getting-Started-with-Subscriber.md)
 
 #### Roles
 

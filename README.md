@@ -56,7 +56,7 @@ The following [Advanced profile features](https://github.com/wamp-proto/wamp-pro
 * [Pattern-based registrations](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/pattern-based-registration.md) - see also [here](http://crossbar.io/docs/Pattern-Based-Registrations/) - see [callee tutorial](WAMP2/Roles/Callee/Reflection-based-Callee.md#pattern-based-registrations)
 * [RawSocket transport](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/rawsocket-transport.md) - see [release notes](Release-notes/WampSharp-v1.2.3.12-beta-release-notes.md#rawsocket-rewrite)
 * [Authentication](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/authentication.md) - see [Router side authentication](WAMP2/Router/Router-side-authentication.md), [Client side authentication](WAMP2/Client/Client-side-authentication.md).
-* [WAMP-CRA](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/challenge-response-authentication.md) - see [WAMP-CRA router side authentication](WAMP2/Router/WAMP-CRA-router-side-authentication.md), [WAMP-CRA client side authentication](WAMP2/Client/WAMP-CRA-client-side-authentication.md)
+* [WAMP-CRA](httpes://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/challenge-response-authentication.md) - see [WAMP-CRA router side authentication](WAMP2/Router/WAMP-CRA-router-side-authentication.md), [WAMP-CRA client side authentication](WAMP2/Client/WAMP-CRA-client-side-authentication.md)
 
 #### Router
 
@@ -79,6 +79,9 @@ The following [Advanced profile features](https://github.com/wamp-proto/wamp-pro
 * Authentication
   * [Client side authentication](WAMP2/Client/Client-side-authentication.md)
   * [WAMP-CRA client side authentication](WAMP2/Client/WAMP-CRA-client-side-authentication.md)
+* Transports
+  * WebSocket4Net
+  * [RawSocket](Release-notes/WampSharp-v1.2.3.12-beta-release-notes.md#rawsocket-client-transport)
 
 ### WAMPv1
 

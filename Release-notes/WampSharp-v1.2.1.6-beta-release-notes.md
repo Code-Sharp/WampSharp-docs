@@ -72,7 +72,7 @@ This listener support [per message deflate](http://tools.ietf.org/html/draft-iet
 
 #### RawSocket transport support
 
-This version has router-side only support for [RawSocket transport](https://github.com/tavendo/WAMP/blob/master/spec/advanced.md#rawsocket-transport). In order to use it, install the WampSharp.RawSocket package. Then create a WampHost and register the RawSocketTransport.
+This version has router-side only support for [RawSocket transport](https://github.com/wamp-proto/wamp-proto/blob/BEFORE_REPLACE_SPEC_WITH_RFC/spec/advanced.md#rawsocket-transport). In order to use it, install the WampSharp.RawSocket package. Then create a WampHost and register the RawSocketTransport.
 Example:
 
 ```csharp
@@ -650,10 +650,10 @@ From this version, WampHost's Realms' Service property is implemented differentl
 * This allows me to reuse code, instead of maintaining two different implementations of IWampRealmServiceProvider - one for the router and one for the client.
 * It makes the router hosted components first class citizens - each realm internal client has now a session id (available via IHostedRealm.SessionId).
 * It makes the code more consistent - whether if it runs in the router or as a client.
-* WAMPv2 [discourages](https://github.com/tavendo/WAMP/blob/master/spec/basic.md#application-code) routers to run application code.
+* WAMPv2 [discourages](https://github.com/wamp-proto/wamp-proto/tree/BEFORE_REPLACE_SPEC_WITH_RFC/spec/basic.md#application-code) routers to run application code.
 
 #### Fleck transport
 
-From this version, Fleck 0.12.0.40 is used. This version of Fleck has feedback for message send to clients. WampSharp uses this feedback and assures that messages are sent serially per client - i.e:  a message will only be sent after the previous one has been received by the client. This should avoid some race conditions and should implement [ordering-guarantees](https://github.com/tavendo/WAMP/blob/master/spec/basic.md#ordering-guarantees) better.
+From this version, Fleck 0.12.0.40 is used. This version of Fleck has feedback for message send to clients. WampSharp uses this feedback and assures that messages are sent serially per client - i.e:  a message will only be sent after the previous one has been received by the client. This should avoid some race conditions and should implement [ordering-guarantees](https://github.com/wamp-proto/wamp-proto/tree/BEFORE_REPLACE_SPEC_WITH_RFC/spec/basic.md#ordering-guarantees) better.
 
 > Written with [StackEdit](https://stackedit.io/).

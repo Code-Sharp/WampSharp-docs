@@ -43,20 +43,20 @@ This repository contains documentation for the [WampSharp project](http://github
 
 #### Advanced profile features
 
-The following [Advanced profile features](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced.md) are supported
+The following [Advanced profile features](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/adv_features.md) are supported
 
-* [Progressive call results](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/progressive-call-results.md): [caller tutorial](WAMP2/Roles/Caller/Reflection-based-Caller.md#progressive-call-results), [callee tutorial](WAMP2/Roles/Callee/Reflection-based-Callee.md#progressive-call-results)
-* [Caller identification](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/caller-identification.md): [caller tutorial](WAMP2/Roles/Caller/Reflection-based-Caller.md#caller-identification), [callee tutorial](WAMP2/Roles/Callee/Reflection-based-Callee.md)
-* [Session meta api](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/session-meta-api.md), [Registration meta api](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/registration-meta-api.md), [Subscription meta api](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/subscription-meta-api.md) - see [release notes](Release-notes/WampSharp-v1.2.3.12-beta-release-notes.md#meta-api-descriptor-service)
+* [Progressive call results](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/adv_rpc_progressive_call_results.md): [caller tutorial](WAMP2/Roles/Caller/Reflection-based-Caller.md#progressive-call-results), [callee tutorial](WAMP2/Roles/Callee/Reflection-based-Callee.md#progressive-call-results)
+* [Caller identification](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/adv_rpc_caller_identification.md): [caller tutorial](WAMP2/Roles/Caller/Reflection-based-Caller.md#caller-identification), [callee tutorial](WAMP2/Roles/Callee/Reflection-based-Callee.md)
+* [Session meta api](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/adv_pubsub_session_meta_api.md), [Registration meta api](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/adv_rpc_registration_meta_api.md), [Subscription meta api](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/work/subscription-meta-api.md) - see [release notes](Release-notes/WampSharp-v1.2.3.12-beta-release-notes.md#meta-api-descriptor-service)
 * [Shared registrations](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/shared-registration.md), see also [here](http://crossbar.io/docs/Shared-Registrations/) - see [callee tutorial](WAMP2/Roles/Callee/Reflection-based-Callee.md#shared-registrations)
-* [Subscriber black and whitelisting](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/subscriber-blackwhite-listing.md)
-* [Publisher exclusion](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/publisher-exclusion.md)
-* [Publisher identification](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/publisher-identification.md)
-* [Pattern-based subscriptions](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/pattern-based-subscription.md) - see also [here](http://crossbar.io/docs/Pattern-Based-Subscriptions/) - see [subscriber tutorial](WAMP2/Roles/Subscriber/Reflection-based-Subscriber.md#pattern-based-subscriptions)
-* [Pattern-based registrations](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/pattern-based-registration.md) - see also [here](http://crossbar.io/docs/Pattern-Based-Registrations/) - see [callee tutorial](WAMP2/Roles/Callee/Reflection-based-Callee.md#pattern-based-registrations)
-* [RawSocket transport](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/rawsocket-transport.md) - see [release notes](Release-notes/WampSharp-v1.2.3.12-beta-release-notes.md#rawsocket-rewrite)
+* [Subscriber black and whitelisting](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/adv_pubsub_subscriber_blackwhite_listing.md)
+* [Publisher exclusion](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/adv_pubsub_publisher_exclusion.md)
+* [Publisher identification](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/adv_pubsub_publisher_identification.md)
+* [Pattern-based subscriptions](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/adv_pubsub_pattern_based_subscription.md) - see also [here](http://crossbar.io/docs/Pattern-Based-Subscriptions/) - see [subscriber tutorial](WAMP2/Roles/Subscriber/Reflection-based-Subscriber.md#pattern-based-subscriptions)
+* [Pattern-based registrations](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/adv_rpc_pattern_based_registration.md) - see also [here](http://crossbar.io/docs/Pattern-Based-Registrations/) - see [callee tutorial](WAMP2/Roles/Callee/Reflection-based-Callee.md#pattern-based-registrations)
+* [RawSocket transport](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/work/rawsocket-transport.md) - see [release notes](Release-notes/WampSharp-v1.2.3.12-beta-release-notes.md#rawsocket-rewrite)
 * [Authentication](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/authentication.md) - see [Router side authentication](WAMP2/Router/Router-side-authentication.md), [Client side authentication](WAMP2/Client/Client-side-authentication.md).
-* [WAMP-CRA](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/challenge-response-authentication.md) - see [WAMP-CRA router side authentication](WAMP2/Router/WAMP-CRA-router-side-authentication.md), [WAMP-CRA client side authentication](WAMP2/Client/WAMP-CRA-client-side-authentication.md)
+* [WAMP-CRA](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/work/challenge-response-authentication.md) - see [WAMP-CRA router side authentication](WAMP2/Router/WAMP-CRA-router-side-authentication.md), [WAMP-CRA client side authentication](WAMP2/Client/WAMP-CRA-client-side-authentication.md)
 
 #### Router
 

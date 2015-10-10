@@ -15,11 +15,11 @@ This repository contains documentation for the [WampSharp project](http://github
 ### WAMPv2 Documentation
 
 #### Tutorials
-* [Getting started with WAMPv2](WAMP2/Getting-Started-with-WAMPv2.md)
+* [Getting started with WAMPv2](WAMP2/Getting-started-with-WAMPv2.md)
 * [Getting started with Callee](WAMP2/Roles/Callee/Getting-Started-with-Callee.md)
 * [Getting started with Caller](WAMP2/Roles/Caller/Getting-Started-with-Caller.md)
 * [Getting started with Publisher](WAMP2/Roles/Publisher/Getting-Started-with-Publisher.md)
-* [Getting started with Subscriber](WAMP2/Roles/Publisher/Getting-Started-with-Subscriber.md)
+* [Getting started with Subscriber](WAMP2/Roles/Subscriber/Getting-Started-with-Subscriber.md)
 
 #### Roles
 
@@ -48,7 +48,7 @@ The following [Advanced profile features](https://github.com/wamp-proto/wamp-pro
 * [Progressive call results](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/adv_rpc_progressive_call_results.md): [caller tutorial](WAMP2/Roles/Caller/Reflection-based-Caller.md#progressive-call-results), [callee tutorial](WAMP2/Roles/Callee/Reflection-based-Callee.md#progressive-call-results)
 * [Caller identification](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/adv_rpc_caller_identification.md): [caller tutorial](WAMP2/Roles/Caller/Reflection-based-Caller.md#caller-identification), [callee tutorial](WAMP2/Roles/Callee/Reflection-based-Callee.md)
 * [Session meta api](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/adv_pubsub_session_meta_api.md), [Registration meta api](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/adv_rpc_registration_meta_api.md), [Subscription meta api](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/work/subscription-meta-api.md) - see [release notes](Release-notes/WampSharp-v1.2.3.12-beta-release-notes.md#meta-api-descriptor-service)
-* [Shared registrations](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/shared-registration.md), see also [here](http://crossbar.io/docs/Shared-Registrations/) - see [callee tutorial](WAMP2/Roles/Callee/Reflection-based-Callee.md#shared-registrations)
+* [Shared registrations](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/shared-registration.md), see also [here](https://github.com/wamp-proto/wamp-proto/blob/03b4ae2236aafe4af56df8232cea03378545b86f/rfc/adv_rpc_shared_registration.md) and [here](http://crossbar.io/docs/Shared-Registrations/)  - see [callee tutorial](WAMP2/Roles/Callee/Reflection-based-Callee.md#shared-registrations)
 * [Subscriber black and whitelisting](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/adv_pubsub_subscriber_blackwhite_listing.md)
 * [Publisher exclusion](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/adv_pubsub_publisher_exclusion.md)
 * [Publisher identification](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/adv_pubsub_publisher_identification.md)
@@ -79,13 +79,16 @@ The following [Advanced profile features](https://github.com/wamp-proto/wamp-pro
 * Authentication
   * [Client side authentication](WAMP2/Client/Client-side-authentication.md)
   * [WAMP-CRA client side authentication](WAMP2/Client/WAMP-CRA-client-side-authentication.md)
+* Transports
+  * WebSocket4Net
+  * [RawSocket](Release-notes/WampSharp-v1.2.3.12-beta-release-notes.md#rawsocket-client-transport)
 
 ### WAMPv1
 
 * [Get Started!](WAMP1/Getting-started-with-WAMPv1.md)
 * [Getting Started with WAMP client](WAMP1/Getting-started-with-WAMPv1-client.md)
 * [Server RPC Hosting](WAMP1/Server RPC hosting (WAMPv1).md)
-* [Server PubSub Hosting](WAMP1/Server PubSub Hosting (WAMPv1).md)
+* [Server PubSub Hosting](WAMP1/Server PubSub hosting (WAMPv1).md)
 * [Notes for WAMPv1 users](WAMP1/Notes-for-WAMPv1-users.md)
 
 ### Release Notes

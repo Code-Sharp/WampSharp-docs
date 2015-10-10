@@ -1,6 +1,6 @@
 ## Raw api
 
-The callee proxy is the easiest way to consume WAMP caller capabilities, but it is limited to C# features. In some cases you might want to handle a YIELD message differently. For these cases, the Raw callback api exists.
+The callee proxy is the easiest way to consume WAMP caller capabilities, but it is limited to C# features. In some cases you might want to handle a RESULT message differently. For these cases, the Raw callback api exists.
 
 In order to use raw callback api from a WampSharp client, create a class implementing IWampRawRpcOperationClientCallback. This class will be notified when a result arrives.
 Then create a new instance of your class, and access RpcCatalog property of WampChannel's RealmProxy, then call Invoke of your desired method with desired parameters.

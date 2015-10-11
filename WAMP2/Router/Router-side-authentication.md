@@ -39,7 +39,7 @@ Each method can return a false value in order to prevent access of the client to
 
 ### Ticket-based authentication example
 
-This is an example implementation of a very simplified version of [Ticket-based authentication](https://github.com/tavendo/WAMP/blob/master/spec/advanced/ticket-authentication.md). It shows off a bit C# 6.0 features too.
+This is an example implementation of a very simplified version of [Ticket-based authentication](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/advanced/ap_authentication_ticket.md). It shows off a bit C# 6.0 features too.
 
 ```csharp
 public class MyAuthenticatorFactory : IWampSessionAuthenticatorFactory

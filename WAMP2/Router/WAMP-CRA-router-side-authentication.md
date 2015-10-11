@@ -1,6 +1,6 @@
 ## WAMP-CRA router-side authentication
 
-[WAMP-CRA](https://github.com/tavendo/WAMP/blob/master/spec/advanced/challenge-response-authentication.md/) router side authentication is supported. It is available as an abstract class named WampCraSessionAuthenticator which inherits from the [WampSessionAuthenticator class](Router-side-authentication.md). The class has two abstract properties needed to be implemented: AuthenticationChallenge and Secret - the AuthenticationChallenge is the challenge to be sent upon CHALLENGE message, the Secret is the secret used to compute the signature
+[WAMP-CRA](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/advanced/ap_authentication_cra.md) router side authentication is supported. It is available as an abstract class named WampCraSessionAuthenticator which inherits from the [WampSessionAuthenticator class](Router-side-authentication.md). The class has two abstract properties needed to be implemented: AuthenticationChallenge and Secret - the AuthenticationChallenge is the challenge to be sent upon CHALLENGE message, the Secret is the secret used to compute the signature
 
 It is also possible to add additional data (sent upon CHALLENGE message in extra parameter), such as salt, iterations and keylen by setting the CraChallengeDetails property.
 

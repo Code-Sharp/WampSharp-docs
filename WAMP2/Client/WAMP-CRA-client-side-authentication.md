@@ -1,6 +1,6 @@
 ## WAMP-CRA client-side authentication
 
-[WAMP-CRA](https://github.com/tavendo/WAMP/blob/master/spec/advanced/challenge-response-authentication.md/) client side authentication is  supported. In order to use it, instantiate a new instance of WampCraAuthenticator and pass it to the channel factory.
+[WAMP-CRA](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/advanced/ap_authentication_cra.md) client side authentication is  supported. In order to use it, instantiate a new instance of WampCraAuthenticator and pass it to the channel factory.
 
 ### Example
 

@@ -69,7 +69,7 @@ The actual reason this api is introduced is for RawSocket channels, see RawSocke
 
 ####RawSocket rewrite
 
-This version includes a total rewrite of [RawSocket transport](https://github.com/wamp-proto/wamp-proto/blob/master/spec/advanced/rawsocket-transport.md). The current rewrite implements the [revised RawSocket transport spec](https://github.com/tavendo/AutobahnPython/issues/291) and is implemented using the framework's TcpListener class, instead of [SuperSocket](https://github.com/kerryjiang/SuperSocket).
+This version includes a total rewrite of [RawSocket transport](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/text/advanced/ap_transport_rawsocket.md). The current rewrite implements the [revised RawSocket transport spec](https://github.com/tavendo/AutobahnPython/issues/291) and is implemented using the framework's TcpListener class, instead of [SuperSocket](https://github.com/kerryjiang/SuperSocket).
 
 In order to use the router-side RawSocket transport, install the WampSharp.RawSocket package. Then create a WampHost (or an WampAuthenticationHost) and register the RawSocketTransport. Example:
 ```csharp

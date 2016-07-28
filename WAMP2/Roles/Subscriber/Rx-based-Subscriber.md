@@ -5,7 +5,7 @@
 ### Basic usage
 
 ```csharp
-private static void Run()
+private async static Task RunAsync()
 {
     DefaultWampChannelFactory factory = new DefaultWampChannelFactory();
 
@@ -14,7 +14,7 @@ private static void Run()
     IWampChannel channel =
         factory.CreateJsonChannel(serverAddress, "realm1");
 
-    channel.Open().Wait(5000);
+    await channel.Open().ConfigureAwait(false);
 
     IWampRealmProxy realmProxy = channel.RealmProxy;
 
@@ -40,7 +40,14 @@ Specifying no generic type will a return a IWampSubject, that is a IObservable o
 #### IWampSubject example
 
 ```csharp
-public static void Run()
+public static void Main(string[] args)
+{
+    IDisposable disposable = RunAsync().Result;
+    Console.ReadLine();
+    disposable.Dispose();
+}
+
+private static async Task<IDisposable> RunAsync()
 {
     DefaultWampChannelFactory factory = new DefaultWampChannelFactory();
 
@@ -49,7 +56,7 @@ public static void Run()
     IWampChannel channel =
         factory.CreateJsonChannel(serverAddress, "realm1");
 
-    channel.Open().Wait(5000);
+    await channel.Open().ConfigureAwait(false);
 
     IWampRealmProxy realmProxy = channel.RealmProxy;
 
@@ -59,9 +66,7 @@ public static void Run()
     IDisposable disposable =
         topic.Subscribe(OnTopic2);
 
-    Console.ReadLine();
-
-    disposable.Dispose();
+    return disposable;
 }
 
 private static void OnTopic2(IWampSerializedEvent serializedEvent)

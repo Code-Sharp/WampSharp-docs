@@ -5,7 +5,7 @@
 ### Basic usage
 
 ```csharp
-private async static Task RunAsync()
+private static async Task RunAsync()
 {
     DefaultWampChannelFactory factory = new DefaultWampChannelFactory();
 

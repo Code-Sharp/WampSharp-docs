@@ -1,6 +1,6 @@
 ## Raw Subscriber
 
-Like other roles, subscriber also has a raw version, which allows you treat EVENT messages as you like. In order to use it, you need to implement the IWampRawTopicRouterSubscriber interface.
+Like other roles, subscriber also has a raw version, which allows you treat EVENT messages as you like. In order to use it, you need to implement the IWampRawTopicClientSubscriber interface.
 
 ### Usage:
 

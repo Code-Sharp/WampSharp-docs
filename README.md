@@ -69,7 +69,7 @@ The following [Advanced profile features](https://github.com/wamp-proto/wamp-pro
   * WebSockets
     * Fleck
     * [Vtortola](Release-notes/WampSharp-v1.2.1.6-beta-release-notes.md#vtortolawebsocketlistener-support)
-    * [ASP.NET Core](Release-notes/WampSharp-v1.2.4.18-beta-release-notes.md#asp-net-core-support)
+    * [ASP.NET Core](Release-notes/WampSharp-v1.2.4.18-beta-release-notes.md#aspnet-core-support)
   * [RawSocket](Release-notes/WampSharp-v1.2.3.12-beta-release-notes.md#rawsocket-rewrite)
   * [SignalR](https://github.com/Code-Sharp/AutobahnJS.SignalR)
 

@@ -4,9 +4,9 @@
 
 1. [New features](#new-features)
     * [.NET Standard support](#net-standard-support)
-    * [ASP.NET Core support](#asp-net-core-support)
+    * [ASP.NET Core support](#aspnet-core-support)
 2. [Other changes](#other-changes)
-	* [Message queue](#message-queue)
+	* [Internal changes](#internal-changes)
     * [Windows Phone issues](#windows-phone-issues)
     * [Dependencies update](#dependencies-update)
 

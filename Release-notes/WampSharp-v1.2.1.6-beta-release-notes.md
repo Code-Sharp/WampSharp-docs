@@ -68,7 +68,7 @@ host.RegisterTransport(transport,
 host.Open();
 ```
 
-This listener support [per message deflate](http://tools.ietf.org/html/draft-ietf-hybi-permessage-compression-17#section-8). To enable it, pass perMessageDeflate = true, in the transport's ctor.
+This listener supports [per message deflate](http://tools.ietf.org/html/draft-ietf-hybi-permessage-compression-17#section-8). To enable it, pass perMessageDeflate = true, in the transport's ctor.
 
 #### RawSocket transport support
 

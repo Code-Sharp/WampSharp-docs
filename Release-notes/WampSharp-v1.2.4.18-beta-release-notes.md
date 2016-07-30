@@ -22,7 +22,7 @@ Regarding WebSockets:
 * Client-side support is available: it works via a new implementation of WampConnection which is based on [System.Net.WebSockets](https://www.nuget.org/packages/system.net.websockets/). Note that this currently doesn't work on .NET Core on Unix, due to the [following (resolved) issue](https://github.com/dotnet/corefx/issues/2486). The issue is resolved, and this should work fine on Unix environments after [.NET Core 1.1](https://github.com/dotnet/core/blob/master/roadmap.md) is released.
 * Router-side support is available via ASP.NET Core [WebSockets.Server](https://www.nuget.org/packages/Microsoft.AspNetCore.WebSockets.Server/). See the following section for an usage example.
 
-''Note'': WampSharp.Default.Router isn't present yet since I'm not aware of any standalone .NET Standard compatible WebSocket server (such as Fleck or Vtortola/WebSocketListener).
+**Note**: WampSharp.Default.Router isn't present yet since I'm not aware of any standalone .NET Standard compatible WebSocket server (such as Fleck or Vtortola/WebSocketListener).
 
 #### ASP.NET Core support
 

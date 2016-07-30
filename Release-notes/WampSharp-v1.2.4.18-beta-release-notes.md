@@ -26,7 +26,11 @@ Regarding WebSockets:
 
 #### ASP.NET Core support
 
-This version introduces ASP.NET core support. In order to use it, you need to create [a new empty ASP.NET Core project](https://docs.asp.net/en/latest/getting-started.html). Change your current Statup class to the following class
+This version introduces ASP.NET core support. In order to use it, you need to create [a new empty ASP.NET Core project](https://docs.asp.net/en/latest/getting-started.html).
+
+Install the following packages: WampSharp.AspNetCore.WebSockets.Server, WampSharp.NewtonsoftMsgpack (you can also install only WampSharp.NewtonsoftJson if you're not interested in MsgPack support).
+
+Change your current Statup class to the following class
 
 ```csharp
 public class Startup

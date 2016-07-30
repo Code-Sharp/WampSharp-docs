@@ -69,6 +69,7 @@ The following [Advanced profile features](https://github.com/wamp-proto/wamp-pro
   * WebSockets
     * Fleck
     * [Vtortola](Release-notes/WampSharp-v1.2.1.6-beta-release-notes.md#vtortolawebsocketlistener-support)
+    * [ASP.NET Core](Release-notes/WampSharp-v1.2.4.18-beta-release-notes.md#aspnet-core-support)
   * [RawSocket](Release-notes/WampSharp-v1.2.3.12-beta-release-notes.md#rawsocket-rewrite)
   * [SignalR](https://github.com/Code-Sharp/AutobahnJS.SignalR)
 
@@ -82,6 +83,7 @@ The following [Advanced profile features](https://github.com/wamp-proto/wamp-pro
 * Transports
   * WebSocket4Net
   * [RawSocket](Release-notes/WampSharp-v1.2.3.12-beta-release-notes.md#rawsocket-client-transport)
+  * System.Net.WebSockets
 
 ### WAMPv1
 
@@ -93,6 +95,7 @@ The following [Advanced profile features](https://github.com/wamp-proto/wamp-pro
 
 ### Release Notes
 
-* [WampSharp v1.2.1.6-beta release notes](Release-notes/WampSharp-v1.2.1.6-beta-release-notes.md)
-* [WampSharp v1.2.2.8-beta release notes](Release-notes/WampSharp-v1.2.2.8-beta-release-notes.md)
+* [WampSharp v1.2.4.18-beta release notes](Release-notes/WampSharp-v1.2.4.18-beta-release-notes.md)
 * [WampSharp v1.2.3.12-beta release notes](Release-notes/WampSharp-v1.2.3.12-beta-release-notes.md)
+* [WampSharp v1.2.2.8-beta release notes](Release-notes/WampSharp-v1.2.2.8-beta-release-notes.md)
+* [WampSharp v1.2.1.6-beta release notes](Release-notes/WampSharp-v1.2.1.6-beta-release-notes.md)

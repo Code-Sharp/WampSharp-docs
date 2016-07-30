@@ -84,3 +84,5 @@ Windows Phone issues ([#122](https://github.com/Code-Sharp/WampSharp/issues/122)
 #### Dependencies update
 
 The following dependencies have been updated: System.Collections.Immutable, vtortola.WebSocketListener, WebSocket4Net, Newtonsoft.Msgpack. In addition, [Reactive Extensions](https://github.com/Reactive-Extensions/Rx.NET) has been updated to version 3.0, which means that WampSharp now refers System.Reactive.* packages instead of Rx-* packages.
+
+The Newtonsoft.Msgpack update is critical in order to communicate with other non-WampSharp peers via MsgPack.

@@ -207,7 +207,7 @@ public class MyPositionalTupleEventConverter : WampEventValueTupleConverter<(int
 {
 }
 
-public class MyKeywordTupleEventConverter : WampEventValueTupleConverter<(string c, MyClass d)>
+public class MyKeywordTupleEventConverter : WampEventValueTupleConverter<(int number1, int number2, string c, MyClass d)>
 {
 }
 
@@ -291,7 +291,7 @@ public class MyPositionalTupleEventConverter : WampEventValueTupleConverter<(int
 {
 }
 
-public class MyKeywordTupleEventConverter : WampEventValueTupleConverter<(string c, MyClass d)>
+public class MyKeywordTupleEventConverter : WampEventValueTupleConverter<(int number1, int number2, string c, MyClass d)>
 {
 }
 

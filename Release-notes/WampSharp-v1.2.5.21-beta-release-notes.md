@@ -29,13 +29,11 @@ public interface IComplexResultService
 
 public class ComplexResultService : IComplexResultService
 {
-    [WampProcedure("com.myapp.add_complex")]
     public (int c, int ci) AddComplex(int a, int ai, int b, int bi)
     {
        return (a + b, ai + bi);
     }
 
-    [WampProcedure("com.myapp.split_name")]
     public (string, string) SplitName(string fullname)
     {
         string[] splitted = fullname.Split(' ');

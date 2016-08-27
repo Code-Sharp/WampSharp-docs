@@ -175,32 +175,34 @@ Then, just pass an instance of your IWampEventValueTupleConverter to the new ove
 ```csharp
 public async Task Run()
 {
-    DefaultWampChannelFactory factory = new DefaultWampChannelFactory();
+	DefaultWampChannelFactory factory = new DefaultWampChannelFactory();
 
-    IWampChannel channel =
-        factory.CreateJsonChannel("ws://localhost:8080/ws", "realm1");
+	IWampChannel channel =
+		factory.CreateJsonChannel("ws://localhost:8080/ws", "realm1");
 
-    await channel.Open();
+	await channel.Open();
 
-    ISubject<(int, int)> topic1Subject =
-        channel.RealmProxy.Services.GetSubject
-                ("com.myapp.topic1",
-                new MyPositionalTupleEventConverter());
+	ISubject<(int, int)> topic1Subject =
+		channel.RealmProxy.Services.GetSubject
+				("com.myapp.topic1",
+				new MyPositionalTupleEventConverter());
 
-    topic1Subject.Subscribe(value => {
-        (int number1, int number2) = value;
-        Console.WriteLine($">com.myapp.topic1: Got event: number1: {number1}, number2:{number2}")
-    });
+	topic1Subject.Subscribe(value =>
+	{
+		(int number1, int number2) = value;
+		Console.WriteLine($">com.myapp.topic1: Got event: number1:{number1}, number2:{number2}");
+	});
 
-    ISubject<(int number1, int number2, string c, MyClass d)> topic2Subject =
-        channel.RealmProxy.Services.GetSubject
-                ("com.myapp.topic2",
-                new MyKeywordTupleEventConverter());
+	ISubject<(int number1, int number2, string c, MyClass d)> topic2Subject =
+		channel.RealmProxy.Services.GetSubject
+				("com.myapp.topic2",
+				new MyKeywordTupleEventConverter());
 
-    topic2Subject.Subscribe(value => {
-        (int number1, int number2, string c, MyClass d) = value;
-        Console.WriteLine($">com.myapp.topic2: Got event: number1:{number1}, number2:{number2}, c:{c}, d:{d}")
-    });
+	topic2Subject.Subscribe(value =>
+	{
+		(int number1, int number2, string c, MyClass d) = value;
+		Console.WriteLine($">com.myapp.topic2: Got event: number1:{number1}, number2:{number2}, c:{c}, d:{d}");
+	});
 }
 
 public class MyPositionalTupleEventConverter : WampEventValueTupleConverter<(int, int)>
@@ -251,40 +253,41 @@ setInterval(function () {
 ```csharp
 public async Task Run()
 {
-    DefaultWampChannelFactory factory = new DefaultWampChannelFactory();
+	DefaultWampChannelFactory factory = new DefaultWampChannelFactory();
 
-    IWampChannel channel =
-        factory.CreateJsonChannel("ws://localhost:8080/ws", "realm1");
+	IWampChannel channel =
+		factory.CreateJsonChannel("ws://localhost:8080/ws", "realm1");
 
-    await channel.Open();
+	await channel.Open();
 
-    ISubject<(int, int)> topic1Subject =
-        channel.RealmProxy.Services.GetSubject
-                ("com.myapp.topic1",
-                new MyPositionalTupleEventConverter());
+	ISubject<(int, int)> topic1Subject =
+		channel.RealmProxy.Services.GetSubject
+				("com.myapp.topic1",
+				new MyPositionalTupleEventConverter());
 
-    ISubject<(int number1, int number2, string c, MyClass d)> topic2Subject =
-        channel.RealmProxy.Services.GetSubject
-                ("com.myapp.topic2",
-                new MyKeywordTupleEventConverter());
+	ISubject<(int number1, int number2, string c, MyClass d)> topic2Subject 
+		channel.RealmProxy.Services.GetSubject
+				("com.myapp.topic2",
+				new MyKeywordTupleEventConverter());
 
-    IObservable<long> timer =
-        Observable.Timer(TimeSpan.FromMilliseconds(0),
-                         TimeSpan.FromMilliseconds(1000));
+	IObservable<int> timer =
+		Observable.Timer(TimeSpan.FromMilliseconds(0),
+						 TimeSpan.FromMilliseconds(1000))
+						 .Select((x, i) => i);
 
-    Random random = new Random();
+	Random random = new Random();
 
-    IDisposable disposable =
-        timer.Subscribe(value =>
-        {
-            topic1Subject.OnNext((random.Next(0, 100), 23));
-            topic2Subject.OnNext((random.Next(0, 100), 23, "Hello",
-                                  new MyClass()
-                                  {
-                                      Counter = value,
-                                      Foo = new int[] {1, 2, 3}
-                                  }));
-        });
+	IDisposable disposable =
+		timer.Subscribe(value =>
+		{
+			topic1Subject.OnNext((random.Next(0, 100), 23));
+			topic2Subject.OnNext((random.Next(0, 100), 23, "Hello",
+								  new MyClass()
+								  {
+									  Counter = value,
+									  Foo = new int[] { 1, 2, 3 }
+								  }));
+		});
 }
 
 public class MyPositionalTupleEventConverter : WampEventValueTupleConverter<(int, int)>

@@ -89,11 +89,17 @@ For example, declare the following callee proxy interface:
 ```csharp
 public interface IComplexResultServiceProxy
 {
+	[WampProcedure("com.myapp.add_complex")]
+	Task<(int c, int ci)> AddComplexAsync(int a, int ai, int b, int bi);
+
+	[WampProcedure("com.myapp.split_name")]
+    Task<(string, string)> SplitNameAsync(string fullname);
+
     [WampProcedure("com.myapp.add_complex")]
-    Task<(int c, int ci)> AddComplexAsync(int a, int ai, int b, int bi);
+    (int c, int ci) AddComplex(int a, int ai, int b, int bi);
 
     [WampProcedure("com.myapp.split_name")]
-    Task<(string, string)> SplitNameAsync(string fullname);
+    (string, string) SplitName(string fullname);
 }
 ```
 

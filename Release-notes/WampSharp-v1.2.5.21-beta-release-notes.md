@@ -7,8 +7,8 @@
     * [Reflection-based caller tuples support](#reflection-based-caller-tuples-support)
     * [Rx-based publish/subscribe tuples support](#rx-based-publishsubscribe-tuples-support)
         * [Rx-based publisher tuples support](#rx-based-publisher-tuples-support-sample)
-        * [Rx-based subscriber tuples support](#rx-based-publisher-tuples-support-sample)
-2. [Other features]
+        * [Rx-based subscriber tuples support](#rx-based-subscriber-tuples-support-sample)
+2. [Other features](#other-features)
     * [Instance providers for reflection-based callee](#instance-providers-for-reflection-based-callee)
     * [.NET Standard WebSocket4Net support](#net-standard-websocket4net-support)
     * [Formatted logging](#formatted-logging)
@@ -359,7 +359,7 @@ This allows you to control yourself the lifecycle of the callee service instance
 
 For instance, using [Ninject](http://www.ninject.org/):
 
-```
+```csharp
 public static async Task Run()
 {
     IKernel kernel = new StandardKernel();

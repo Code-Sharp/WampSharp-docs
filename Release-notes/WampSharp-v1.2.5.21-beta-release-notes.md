@@ -5,7 +5,13 @@
 1. [C# 7.0 tuples support](#c-70-tuples-support)
     * [Reflection-based callee tuples support](#reflection-based-callee-tuples-support)
     * [Reflection-based caller tuples support](#reflection-based-caller-tuples-support)
-    * [Rx-based publish/subscribe tuples support](#rx-based-publish-subscribe-tuples-support)
+    * [Rx-based publish/subscribe tuples support](#rx-based-publishsubscribe-tuples-support)
+        * [Rx-based publisher tuples support](#rx-based-publisher-tuples-support-sample)
+        * [Rx-based subscriber tuples support](#rx-based-publisher-tuples-support-sample)
+2. [Other features]
+    * [Instance providers for reflection-based callee](#instance-providers-for-reflection-based-callee)
+    * [.NET Standard WebSocket4Net support](#net-standard-websocket4net-support)
+    * [Formatted logging](#formatted-logging)
 
 ### C# 7.0 tuples support
 
@@ -179,7 +185,7 @@ Luckily enough, in order to implement this interface it is sufficient to derive 
 
 (This might seem a bit odd, but that's the best way I'm aware of for preserving ValueTuple element names after compilation)
 
-Then, just pass an instance of your IWampEventValueTupleConverter to the new overload of WampRealmServiceProvider's GetSubject method, which receives the topic's uri and an instance of IWampEventValueTupleConverter, in order to receive a ISubject<> instance of your desired tuple type.
+Then, just pass an instance of your IWampEventValueTupleConverter to the new overload of IWampRealmServiceProvider's GetSubject method, which receives the topic's uri and an instance of IWampEventValueTupleConverter, in order to receive a ISubject<> instance of your desired tuple type.
 
 ##### Rx-based subscriber tuples support sample
 
@@ -342,3 +348,57 @@ session.subscribe('com.myapp.topic2', on_topic2);
 ```
 
 > This example is based on [this](https://github.com/tavendo/AutobahnPython/tree/master/examples/twisted/wamp/pubsub/complex) AutobahnJS sample.
+
+### Other features
+
+#### Instance providers for reflection-based callee
+
+From this version, new overloads for IWampRealmServiceProvider's RegisterCallee method were added. These overloads allow you to specify an instance provider for your callee service instance, that is a Func<> delegate that returns an instance of your callee service provider.
+
+This allows you to control yourself the lifecycle of the callee service instance. You can of course use an dependency injection framework to help you manage that.
+
+For instance, using [Ninject](http://www.ninject.org/):
+
+```
+public static async Task Run()
+{
+    IKernel kernel = new StandardKernel();
+
+    kernel.Bind<IAddCalculator>().To<Calculator>();
+
+    DefaultWampChannelFactory factory = new DefaultWampChannelFactory();
+
+	IWampChannel channel =
+		factory.CreateJsonChannel("ws://127.0.0.1:8080/ws", "realm1");
+
+	await channel.Open();
+
+    await channel.RealmProxy.Services.RegisterCallee(() => kernel.Get<IAddCalculator>());
+}
+
+public interface IAddCalculator
+{
+    [WampProcedure("com.arguments.add2")]
+    int Add2(int x, int y);
+}
+
+public class Calculator : IAddCalculator
+{
+    public int Add2(int x, int y)
+    {
+        return (x + y);
+    }
+}
+```
+
+> Note: if you're using Ninject, you're recomended to use [Ninject.Extensions.Factory](https://github.com/ninject/Ninject.Extensions.Factory) which allows you to get typed factories instances or Func<> instances without being aware about the dependency injection container.
+
+#### .NET Standard WebSocket4Net support
+
+[WebSocket4Net](https://github.com/kerryjiang/WebSocket4Net) has been ported to .NET Standard 1.3 recently. From this version WampSharp.WebSocket4Net is supported for .NET Standard 1.3 as well.
+
+This could be an alternative for running WampSharp over WebSockets on non-Windows platforms for now, until an update for .NET Core which supports WebSockets on non-Windows platforms is released.
+
+#### Formatted logging
+
+From this version, some formatted logs are written using [structured logging](https://github.com/serilog/serilog/wiki/Structured-Data). These include properties such as session ids, Incoming WAMP Json/MsgPack messages and more. This feature can be leveraged by [Serilog](https://serilog.net/).

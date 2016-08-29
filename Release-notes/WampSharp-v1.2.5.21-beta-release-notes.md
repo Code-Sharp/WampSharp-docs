@@ -1,4 +1,4 @@
-## WampSharp v1.2.4.18-beta release notes
+## WampSharp v1.2.5.21-beta release notes
 
 **Contents**
 
@@ -9,13 +9,14 @@
 
 ### C# 7.0 tuples support
 
-This verion mainly focuses on C# 7.0 tuples support.
+This verion mainly focuses on [C# 7.0 tuples](https://blogs.msdn.microsoft.com/dotnet/2016/08/24/whats-new-in-csharp-7-0/) support.
+> Note: C# 7.0 tuples syntax is currently supported only by [Visual Studio "15" Preview 4](https://www.visualstudio.com/en-us/news/releasenotes/vs15-relnotes). You can download it [here](https://www.visualstudio.com/en-us/downloads/visual-studio-next-downloads-vs.aspx).
 
 #### Reflection-based callee tuples support
 
-From this version, you can return a C# 7.0 ValueTuple from a reflection-based callee method. The ValueTuple will be serialized to either the arguments keywords or to the arguments array of the YIELD message, depending on whether the returned ValueTuple has named elements or positional elements. (ValueTuples having elements which are partially named are not supported)
+From this version, you can return a C# 7.0 tuple from a reflection-based callee method. The tuple will be serialized to either the arguments keywords or to the arguments array of the YIELD message, depending on whether the returned tuple has named elements or positional elements. (tuples having elements which are partially named are not supported)
 
-For example: A reflection-based callee that returns ValueTuples:
+For example: A reflection-based callee that returns a tuple:
 
 ```csharp
 public interface IComplexResultService
@@ -82,7 +83,7 @@ session.call('com.myapp.split_name', ['Homer Simpson']).then(
 
 #### Reflection-based caller tuples support
 
-Reflection-based callers also support C# 7.0 ValueTuple return values from this version. You can simply declare a method returning a C# 7.0 ValueTuple in your callee proxy interface.
+Reflection-based callers also support C# 7.0 tuple return values from this version. You can simply declare a method returning a C# 7.0 tuple in your callee proxy interface.
 
 For example, declare the following callee proxy interface:
 
@@ -168,13 +169,17 @@ session.register('com.myapp.split_name', split_name).then(
 
 #### Rx-based publish/subscribe tuples support
 
-This version also introduces Rx-based publish/subscribe C# 7.0 ValueTuple support. This allows to handle topics that have complex arguments in a strongly typed manner using ISubject<> api.
+This version also introduces Rx-based publish/subscribe C# 7.0 tuple support. This allows to handle topics that have complex arguments in a strongly typed manner using ISubject<> api.
 
 In order to use this feature, a mechanism called IWampEventValueTupleConverter is introduced.
-This interface is responsible for converting a IWampSerializedEvent instance to a specified ValueTuple and a specified ValueTuple instance to a IWampEvent.
-Luckily enough, in order to implement this interface it is sufficient to derive from WampEventValueTupleConverter<> and specify the desired ValueTuple type. Nothing else is needed to be done.
+
+This interface is responsible for converting a IWampSerializedEvent instance to a specified tuple and a specified tuple instance to a IWampEvent.
+
+Luckily enough, in order to implement this interface it is sufficient to derive from WampEventValueTupleConverter<> and specify the desired tuple type. Nothing else is needed to be done.
+
 (This might seem a bit odd, but that's the best way I'm aware of for preserving ValueTuple element names after compilation)
-Then, just pass an instance of your IWampEventValueTupleConverter to the new overload of WampRealmServiceProvider's GetSubject method, which receives the topic's uri and an instance of IWampEventValueTupleConverter, in order to receive a ISubject<> instance of your desired ValueTuple type.
+
+Then, just pass an instance of your IWampEventValueTupleConverter to the new overload of WampRealmServiceProvider's GetSubject method, which receives the topic's uri and an instance of IWampEventValueTupleConverter, in order to receive a ISubject<> instance of your desired tuple type.
 
 ##### Rx-based subscriber tuples support sample
 

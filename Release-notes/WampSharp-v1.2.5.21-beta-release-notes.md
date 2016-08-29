@@ -11,7 +11,7 @@
 2. [Other features](#other-features)
     * [Instance providers for reflection-based callee](#instance-providers-for-reflection-based-callee)
     * [.NET Standard WebSocket4Net support](#net-standard-websocket4net-support)
-    * [Formatted logging](#formatted-logging)
+    * [Structured logging](#structured-logging)
 
 ### C# 7.0 tuples support
 
@@ -399,6 +399,6 @@ public class Calculator : IAddCalculator
 
 This could be an alternative for running WampSharp over WebSockets on non-Windows platforms for now, until an update for .NET Core which supports WebSockets on non-Windows platforms is released.
 
-#### Formatted logging
+#### Structured logging
 
-From this version, some formatted logs are written using [structured logging](https://github.com/serilog/serilog/wiki/Structured-Data). These include properties such as session ids, Incoming WAMP Json/MsgPack messages and more. This feature can be leveraged by [Serilog](https://serilog.net/).
+From this version, some formatted logs are written using [structured logging](https://github.com/serilog/serilog/wiki/Structured-Data). These include properties such as session ids, incoming WAMP Json/MsgPack messages and more. This feature can be leveraged by [Serilog](https://serilog.net/).

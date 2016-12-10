@@ -65,6 +65,7 @@ Both placing attributes on a class method and placing attributes on an interface
 #### Default parameter values
 
 A method can have default value parameters. These will be used in case the user sends only part of the method's parameters. Example:
+
 ```csharp
 public interface IArgumentsService
 {
@@ -76,6 +77,7 @@ public interface IArgumentsService
 #### Async method support
 
 A method returning a Task&lt;&gt; will be awaited. Example:
+
 ```csharp
 public class SlowSquareService
 {
@@ -102,6 +104,7 @@ public class SlowSquareService
  >Note: this is not supported for asynchronous methods.
  
  Example:
+
 ```csharp
 public class ComplexResultService
 {
@@ -119,6 +122,7 @@ public class ComplexResultService
 #### Multivalued results
 
 Multi-valued results: in order to return an multivalued array in the RESULT/YIELD WAMPv2 message, return an array from a rpc method and place above it a [return: WampResult(CollectionResultTreatment.Multivalued)] attribute. Example:
+
 ```csharp
 public class MultivaluedResultService
 {
@@ -222,6 +226,7 @@ public class LongOpService : ILongOpService
 >```
 
 Then register it to the realm regularly:
+
 ```csharp
 public async Task Run()
 {
@@ -340,6 +345,7 @@ public class SquareService
 In order to use shared registrations, pass to the Register methods, RegisterOptions with a desired Invoke (the policy to be used). The possible options are: single/first/last/random/roundrobin (there exists a static class named WampInvokePolicy with these values).
 
 Example:
+
 ```csharp
 public async Task Run()
 {
@@ -406,6 +412,7 @@ public class MyComponent
 In order to use pattern-based registrations, pass to the Register methods, RegisterOptions with a desired Match (the match pattern to be used). The possible options are: exact/prefix/wildcard. (these values are also available in a static class named WampMatchPattern)
 
 Example:
+
 ```csharp
 public static async Task Run()
 {

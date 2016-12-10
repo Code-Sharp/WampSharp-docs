@@ -114,6 +114,7 @@ public interface IComplexResultService
 }
 ```
 Call example:
+
 ```csharp
 int ci;
 int c;
@@ -124,6 +125,7 @@ proxy.AddComplex(2, 3, 4, 5, out c, out  ci);
 #### Multi-valued results
 
 In order to get an multivalued array from the RESULT/YIELD WAMPv2 message, set the return value of the rpc method to an array and place above it a [return: WampResult(CollectionResultTreatment.Multivalued)] attribute. Example:
+
 ```csharp
 public interface IMultivaluedResultService
 {
@@ -134,6 +136,7 @@ public interface IMultivaluedResultService
 ```
 
 Call example:
+
 ```csharp
 string[] splitted = proxy.SplitName("Homer Simpson");
 ```
@@ -174,6 +177,7 @@ public interface ILongOpService
 ```
 
 Then obtain the proxy and call it:
+
 ```csharp
 public async Task Run()
 {

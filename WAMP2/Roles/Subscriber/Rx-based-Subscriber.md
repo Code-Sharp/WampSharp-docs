@@ -92,7 +92,7 @@ private static void OnTopic2(IWampSerializedEvent serializedEvent)
             }
         };
 
-    Console.WriteLine("Got event: args: [{0}], kwargs: \{\{ {1} \}\}",
+    Console.WriteLine("Got event: args: [{0}], kwargs: [[ {1} ]]",
                       string.Join(", ", deserializedArguments.arguments),
                       deserializedArguments.argumentsKeywords);
 }

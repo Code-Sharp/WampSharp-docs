@@ -14,6 +14,7 @@ This example demonstrates cookie-based authenticator usage. Cookies are set usin
 
 Open "http://localhost" in your browser to see this demo in action.
 
+ {% raw %}
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -350,3 +351,4 @@ namespace CookieDemo
     }
 }
 ```
+{% endraw %}

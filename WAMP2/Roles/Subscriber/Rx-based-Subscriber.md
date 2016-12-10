@@ -39,6 +39,7 @@ Specifying no generic type will a return a IWampSubject, that is a IObservable o
 
 #### IWampSubject example
 
+ {% raw %}
 ```csharp
 public static void Main(string[] args)
 {
@@ -92,7 +93,7 @@ private static void OnTopic2(IWampSerializedEvent serializedEvent)
             }
         };
 
-    Console.WriteLine("Got event: args: [{0}], kwargs: [[ {1} ]]",
+    Console.WriteLine("Got event: args: [{0}], kwargs: {{ {1} }}",
                       string.Join(", ", deserializedArguments.arguments),
                       deserializedArguments.argumentsKeywords);
 }
@@ -111,5 +112,6 @@ public class ComplexContract
     }
 }
 ```
+{% endraw %}
 
 > This example is based on [this](https://github.com/tavendo/AutobahnPython/tree/master/examples/twisted/wamp/pubsub/complex) AutobahnJS sample.

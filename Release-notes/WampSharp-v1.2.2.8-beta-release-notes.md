@@ -308,6 +308,7 @@ From this version [shared registrations](http://crossbar.io/docs/Shared-Registra
 In order to use shared registrations, pass to the Register methods, RegisterOptions with a desired Invoke (the policy to be used). The possible options are: single/first/last/random/roundrobin.
 
 Example:
+
 ```csharp
 public async Task Run()
 {
@@ -375,6 +376,7 @@ From this version [pattern-based registrations](http://crossbar.io/docs/Pattern-
 In order to use pattern-based registrations, pass to the Register methods, RegisterOptions with a desired Match (the match pattern to be used). The possible options are: exact/prefix/wildcard.
 
 Example:
+
 ```csharp
 public static async Task Run()
 {

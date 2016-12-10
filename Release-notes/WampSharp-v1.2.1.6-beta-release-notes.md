@@ -110,6 +110,7 @@ public interface ILongOpService
 ```
 
 Then obtain the proxy and call it:
+
 ```csharp
 public async Task Run()
 {
@@ -163,6 +164,7 @@ public class LongOpService : ILongOpService
 >```
 
 Then register it to the realm regularly:
+
 ```csharp
 public async Task Run()
 {
@@ -216,6 +218,7 @@ public async Task Run()
 ```
 
 Callee proxy sample:
+
 ```csharp
 public async Task Run()
 {
@@ -301,6 +304,7 @@ Allows to use WAMPv2 pub/sub features in a similar fashion as reflection rpc.
 In order to use it from a publisher, create a class containing an event decorated with a [WampTopic] attribute. Then register an instance of the class using the RegisterPublisher method of IWampRealmServiceProvider. The arguments published to the event will be treated as the arguments keywords of the publication.
 
 Example: Publisher class:
+
 ```csharp
 public class MyClass
 {
@@ -375,6 +379,7 @@ public class MyPublisher : IMyPublisher
 ```
 
 Publisher registration:
+
 ```csharp
 public static async Task Run()
 {
@@ -441,6 +446,7 @@ public class MySubscriber : IMySubscriber
 ```
 
 Subscriber registration:
+
 ```csharp
 public static async Task Run()
 {
@@ -523,6 +529,7 @@ public interface ISquareService
 ```
 
 And then specify the index in runtime:
+
 ```csharp
 public static async Task Run()
 {
@@ -558,6 +565,7 @@ Client-side authentication is now supported. In order to use client authenticati
 In IWampClientAuthenticator we supply the supported authentication methods and the authenticationid, these are passed in the HELLO message to the router (as details.authmethods, details.authid). We also implement Authenticate method, which sends an AUTHENTICATE message to the router upon CHALLENGE.
 
 Example:
+
 ```csharp
 public class TicketAuthenticator : IWampClientAuthenticator
 {

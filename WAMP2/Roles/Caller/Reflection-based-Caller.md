@@ -238,6 +238,7 @@ public interface ISquareService
 ```
 
 And then specify the index in runtime:
+
 ```csharp
 public static async Task Run()
 {
@@ -257,7 +258,6 @@ public static async Task Run()
 
     int nine = await proxy.Square(3); // Calls ("com.myapp.square." + index)
 }
-
 ```
 
 > Note: we wrap our interceptor with the CachedCalleeProxyInterceptor in order to cache the results of our interceptor, in order to avoid calculating them each call.
@@ -297,7 +297,6 @@ public async Task Run()
     await proxy.Square(0);
     await proxy.Square(2);
 }
-
 ```
 
 > Note: The sample is based on [this](https://github.com/tavendo/AutobahnPython/tree/master/examples/twisted/wamp/rpc/options) AutobahnJS sample

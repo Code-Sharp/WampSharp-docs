@@ -1,4 +1,4 @@
-## Raw api
+## Raw Caller
 
 The callee proxy is the easiest way to consume WAMP caller capabilities, but it is limited to C# features. In some cases you might want to handle a RESULT message differently. For these cases, the Raw callback api exists.
 
@@ -8,6 +8,7 @@ Then create a new instance of your class, and access RpcCatalog property of Wamp
 The IWampRawRpcOperationClientCallback methods receive a IWampFormatter so you can deserialize the message parameters yourself.
 
 Client sample code:
+
 ```csharp
 using System;
 using System.Collections.Generic;

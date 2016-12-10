@@ -60,6 +60,7 @@ public interface IAsyncCalculator
 ```
 
 After that, we can use the channel to get a proxy to this interface, and call its method:
+
 ```csharp
 ICalculator proxy = channel.GetRpcProxy<ICalculator>();
 int five = proxy.Add(2, 3);
@@ -75,6 +76,7 @@ Console.WriteLine("2 + 3 = " + asyncFive.Result);
 In order to use pub/sub capabilities, we call channel's GetSubject method: this method has a generic type parameter representing the type of the event published to the Subject. In addition, this method receives the uri of the topic we want to subscribe/publish to.
 
 We first create the event type:
+
 ```csharp
 public class TopicEvent
 {
@@ -95,18 +97,21 @@ public class TopicEvent
 ```
 
 After that, we can get a proxy to the server's topic:
+
 ```csharp
 ISubject<TopicEvent> subject =
     channel.GetSubject<TopicEvent>(@"http://example.com/simple");
 ```
 
 Subscribe to it:
+
 ```csharp
 IDisposable subscription =
     subject.Subscribe(x => Console.WriteLine(x));
 ```
 
 Publish events to it:
+
 ```csharp
 subject.OnNext(new TopicEvent()
                    {
@@ -117,11 +122,13 @@ subject.OnNext(new TopicEvent()
 ```
 
 And unsubscribe from it:
+
 ```csharp
 subscription.Dispose();
 ```
 
 ### A complete sample
+
 ```csharp
 using System;
 using System.Reactive.Subjects;
